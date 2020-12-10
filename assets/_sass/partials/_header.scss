@@ -1,0 +1,317 @@
+@charset "utf-8";
+@import "navbar";
+@import "background";
+
+header.header{
+    font-size: 0; // résoud un bug d'espacement sous la vague
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: radial-gradient(#4C2251, #1B0C25);
+    // règle pr corriger un bug des étoiles qui ne se centrent pas
+    #stars-container{
+        @media screen and (min-width: 2012px){
+            width: 100%;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+    }
+    
+ 
+    #galaxy{
+        height: 100%;
+        width: 100%;
+        background-color: #1B0C25;
+    }
+
+    .hero{
+        // c'est la marge qui décale le logo principal avec les h2.jobs
+        .hero-body{
+            margin-top: 3vw;
+            @media #{$tablet-size}{
+                margin-top: 0rem;
+            }
+        }
+
+        .columns{
+            @media #{$tablet-size}{
+                text-align: left !important;
+            }
+            
+        }
+
+        .container-logo{
+            @media #{$tablet-size}{
+                text-align: right !important;
+            }
+            
+        }
+   
+        .logo-hero{
+            width: 50vw;
+            min-width: 150px;
+            max-width: 280px;
+            position: relative;
+            top: 5px;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(137deg) brightness(103%) contrast(101%);
+            animation: blink 2s infinite ease;
+            @media #{$tablet-size}{
+                max-width: 340px;
+            }
+            @media #{$desktop-size}{
+                max-width: 440px;
+            }
+
+        }
+
+        .container-jobs{
+            @media #{$tablet-size}{
+                margin-left: 1.5rem;
+            }
+            
+        }
+
+
+        h2.jobs{
+            color: $white;
+            font-weight: 700;
+            font-size: 1.6rem;
+            @media #{$desktop-size}{
+                font-size: 2.4rem;
+            }
+            // les trois 'h2' en block
+            span{
+                display: block;
+                line-height: 2.5rem;
+            }
+        }
+
+
+
+
+
+        // les titres des pages hors celle de la page d'acueil
+        .container-title{
+        display: inline-flex;
+        flex-direction: column;
+        
+      
+     
+        h1, h2{
+            font-family: $skills-font; // Montserrat bold
+            // letter-spacing: $space;
+        }
+        h1{
+            font-size: 4rem;
+            font-weight: 700;
+            align-content: start;
+            position: relative;
+            @media #{$tablet-size}{
+                font-size: 6rem;
+            }
+            @media #{$desktop-size}{
+                font-size: 6rem;
+            }
+
+        }
+        // représente le "my"
+        span{
+            position: relative;
+            top: 0.5em;
+            align-self: start;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255 ,.7);
+            @media #{$tablet-size}{
+                font-size: 2.5rem;
+            }
+            @media #{$desktop-size}{
+                font-size: 2.5rem;
+            }
+            
+        }
+    }
+
+
+
+}
+
+        // la flèche animée
+        .arrow{
+            position: absolute;
+            bottom: -5px;
+            text-align: center;
+            width: 100%;
+            height: auto;
+            color: $primary-opaque;
+            z-index: 5000;
+            i{font-size: 2.1rem;}
+            animation: bounce .5s ease-in infinite alternate;
+            @media #{$tablet-size}{
+                &{
+                    bottom: 45px;
+                }
+                i{
+                    font-size: 2.3rem;
+                }
+                    
+            }
+            @media #{$fullhd-size}{
+                &{
+                    bottom: 40px;
+                }
+            }
+
+        }
+
+
+        //////////////// LE HERO POUR LES WORKS //////////////////////////////////////// 
+        .container-hero-works{
+            justify-content: flex-start;
+            align-items: center;
+            .column.arrow-container{
+              padding: 0;
+            }
+        }
+
+        .arrow-back{
+            opacity: .7;
+            font-size: 2.2rem;
+            
+            &:hover{
+                cursor: pointer;
+                opacity: 1;
+                color: $primary-opaque;
+            }
+            @media #{$tablet-size}{
+                font-size: 2.8rem;
+                left: 6vw;
+                margin-left: 3rem;
+              }
+              @media #{$desktop-size}{
+                left: 2vw;
+              }
+              @media #{$widescreen-size}{
+                font-size: 3.2rem;
+                left: 2rem;
+              }
+              @media #{$fullhd-size}{
+                left: 2rem;
+              }
+
+        }
+
+        h1.hero-work {
+            flex: 2;
+            // position relative pr résoudre un bug d'aligmenent avec l'arrow
+            display: inline;
+            bottom: .3rem;
+            font-weight: 700;
+            font-family: $skills-font;
+            // letter-spacing: .1rem;
+            span{
+              display: block;
+              font-weight: 700;
+              font-family: $skills-font;
+              color:$white;
+              letter-spacing: .3rem;
+              line-height: .5rem;
+              opacity: .5;
+              @media #{$tablet-size}{
+                letter-spacing: .4rem;
+                line-height: 1rem;
+              }
+              @media #{desktop-size}{
+                
+              }
+              
+            }
+          }
+        //////////////// FIN DU HERO POUR LES WORKS //////////////////////////////////////// 
+          
+ 
+
+      .cloud{
+        position: absolute;
+        bottom: -19px;
+        display: inline-block;
+        background-position: 0px -10px;
+        background-repeat: repeat no-repeat;
+        background: url(../../assets/SVG/OPTIMIZED/cloud4.svg);
+        width: 100vw;
+        height: calc(100vw / 6.40);
+        max-height: 50px;
+        animation: animate 20s linear infinite;
+        z-index: 0;
+      }
+
+      .cloud:before{
+        content: '';
+        width: 100vw;
+        height: calc(100vw / 6.40);
+        max-height: 55px;
+        background: url(../../assets/SVG/OPTIMIZED/cloud5.svg);
+        display: inline-block;
+        position: absolute;
+        bottom: 2px;
+        // left: 0;
+        opacity: .8;
+        background-repeat: repeat-x;
+        animation: animate-reverse 20s linear infinite;
+      }
+      @media #{$tablet-size}{
+        .cloud{
+          bottom: -1px;
+          max-height: 85px;
+          animation: animate 20s linear infinite;
+        }
+        .cloud:before{
+          bottom: 15px;
+          max-height: 68px;
+          animation: animate-reverse 35s linear infinite;
+        }
+      }
+      @media #{$desktop-size}{
+        .cloud{
+          bottom: -17px;
+          max-height: 120px;
+          animation: animate 25s linear infinite;
+        }
+        .cloud:before{
+          bottom: 13px;
+          max-height: 82px;
+        }
+      }
+
+
+
+        @keyframes animate {
+            0%{
+       
+               background-position-x: 0px;
+            }
+            100%{
+           
+                background-position-x: 100vw;
+            }
+        }
+        @keyframes animate-reverse {
+          0%{
+             background-position-x: 100vw;
+          }
+          100%{
+              background-position-x: 0px;
+          }
+      }
+
+
+
+
+
+
+        
+
+
+}   
+
+

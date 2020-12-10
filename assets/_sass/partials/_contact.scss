@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+  #page-Contact{
+    // background-color: $white-bis;
+
+    h2{
+      font-family: "Patua One", sans-serif;
+      font-weight: 400;
+      color: #008571;
+      @media #{$tablet-size}{
+        font-size: 3rem;
+        text-align: left !important;
+      }
+      @media #{$desktop-size}{
+        margin-bottom: 4rem !important;
+      }
+    }
+
+    .circle{
+      font-size: 1.6rem;
+      width: 50px;
+      height: 50px;
+      background-color: $primary-opaque;
+      color: $white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      
+      @media #{$tablet-size}{
+        margin: auto;
+      }
+      @media #{$widescreen-size}{
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        line-height: 60px;
+      }
+    }
+    span{
+      font-weight: bold;
+      font-size: 1.1rem;
+      @media #{$tablet-size}{
+        font-size: 1.3rem;
+      }
+    }
+    strong{
+      font-weight: initial;
+    }
+
+
+
+
+
+
+
+
+
+
+  }
+
+  

@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+
+#page-Admin{
+
+  .section.login{
+    .container.form{
+      
+      &.is-connected{
+        display: none;
+      }
+      // le conteneur des 2 buttons
+      .field.submit{
+        justify-content: space-between;
+      }
+
+    }
+    .logout{
+      text-align: center;
+      display: inline-block;
+      height: 2.5rem;
+      width: 100%;
+      background: $red;
+      color: $white;
+     line-height: 2.5rem;
+     font-size: 1rem;
+      font-weight: 600;
+      @media #{$tablet-size}{
+        height: 3rem;
+        line-height: 3rem;
+      }
+      &:hover{
+        cursor: pointer;
+        background-color: $grey-dark;
+        // color: $white;
+      }
+    }
+
+    input[type="submit"], input[type="button"]{
+      margin-top: 1rem !important;
+    }
+
+    .container.form, .container-logout{
+      max-width: 400px;
+    }
+     .is-hidden{
+       display: block;
+     }
+    
+  }
+  
+  .section.contact{
+    span{
+      font-weight: lighter;
+      // color: $primary-opaque;
+    }
+  }
+
+
+}
+
+
+  
+  

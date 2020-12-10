@@ -1,0 +1,47 @@
+{
+  "name": "grafiz-site",
+  "version": "1.0.0",
+  "description": "le site de grafiz",
+  "main": "assets/sass/style.scss",
+ 
+  "scripts": {
+    "css-build": "node-sass assets/_sass/main.scss assets/css/main.css",
+    "css-deploy": "npm run css-build && npm run css-postcss",
+    "css-postcss": "postcss --use autoprefixer --output assets/css/main.css assets/css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "deploy": "npm run css-deploy && npm run js-build",
+    "js-build": "babel assets/_javascript --out-dir assets/lib",
+    "js-watch": "npm run js-build -- --watch",
+    "purify": "purifycss assets/css/main.css assets/lib/*.js Views/*.php Views/commons/*.php Views/commons/hero/*.php --min --info --out assets/css/min.css",
+    "start": "npm-run-all --parallel  css-watch js-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grafiz-designer/grafiz-site.git"
+  },
+  "author": "grafiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grafiz-designer/grafiz-site/issues"
+  },
+  "homepage": "https://github.com/grafiz-designer/grafiz-site#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.7.0",
+    "postcss-cli": "^7.1.0",
+    "purgecss": "^3.0.0",
+    "purify-css": "^1.2.5"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "animate.css": "^3.7.2",
+    "aos": "^2.3.4",
+    "bulma": "^0.9.1",
+    "uglify-php": "^1.0.7"
+  }
+}

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+@keyframes shakes{
+  @for $i from 1 through 9 {
+      #{10 * $i}%{
+          transform: translate(#{random(5)}px, #{random(5)}px);
+      }
+      100%{
+          transform: translate(0,0);
+      }
+  }
+  
+
+}
+
+
+
+@keyframes bounce{
+  from {transform: translate(0%, 12%)}
+  to {transform: translate(0%, -12%)}
+}
+
+
+@keyframes shadow-translate{
+  0%{transform: translateX(-50%);}
+  33%{transform: translateX(-52%);}
+  66%{transform: translateX(-47%)}
+  100%{transform: translateX(-50%)}
+}
+
+
+@keyframes shadow-translate2{
+  0%{transform: translateX(-0%)}
+  33%{transform: translateX(-1%)}
+  66%{transform: translateX(1%)}
+  100%{transform: translateX(0%)}
+}
+
+
+@keyframes blink{
+  20%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes galaxy{
+  20%{opacity: 1;}
+  50%{opacity: 0.5;}
+  100%{opacity: 1;}
+}
+
+  
+
+  
+
+  
+
+  
+

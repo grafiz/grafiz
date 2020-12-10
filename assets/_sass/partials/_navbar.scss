@@ -1,0 +1,89 @@
+@charset "utf-8";  
+
+    nav.navbar{
+    background-color: rgba(#ffffff, 0);
+      position: fixed;
+      top: 0px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition: top 0.2s;
+      hr{ 
+          margin: 0;
+          height: 1px;
+          background:$grey-dark;
+      }
+
+      &.to-the-top{
+        top: 0 !important;
+        background-color: $grey-darker;
+        box-shadow : 0px 4px 4px 4px rgba(0, 0, 0, .3);
+ 
+      }
+
+      .navbar-menu{ padding: 0; }
+      .navbar-item{ 
+        color: #fff;
+        &:hover{
+          background: $primary-opaque;
+          &:last-child{
+          background: transparent;
+
+          }
+        }
+ 
+      }
+      .navbar-item:last-child a{ 
+        font-size: 1rem;
+        padding: 0 .2rem;
+        transition: all .2s ease;
+        &:hover{ transform: scale(1.3); color: $primary-opaque;}
+        
+      }
+
+      .navbar-menu.is-active, &.to-the-top{
+        .navbar-item{
+          background: $grey-darker;
+          &:hover{
+            background: $primary-opaque;
+          }
+          &:last-child a:hover{ color: $grey-darker; }
+        }
+      }
+
+
+
+
+
+
+
+
+
+    // le logo en haut à gauche
+    .navbar-brand{
+      // le logo de la navbar
+      .navbar-item:hover{background: transparent;}
+        .logo{
+            width: 20vw;
+            max-width: 100px;
+            height: auto;
+            // filter permet de contourner le pb pr la couleur d'un svg var "fill" ne foncitonne pas 
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(137deg) brightness(103%) contrast(101%);
+        }
+        .navbar-burger span{
+          height: 2px;
+          background-color: #fff;
+          &:hover{
+            background: #fff;
+          }
+        }
+    }
+
+
+  
+  }
+//   .is-active{
+//     transition: all 1s ease-in;
+// }
+
+//  TOUTES LES REGLES POUR CHANGER LA COULEURS DES ELEMENTS DE LA NAVBAR VIA LA CLASS "to-the-top"

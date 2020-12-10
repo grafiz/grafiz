@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+
+#page-Works{
+
+
+
+  .section.categorie{
+    padding: .6rem;
+    .centered{
+      align-items: flex-end;
+    }
+
+
+    
+  }
+  
+  figure.retouche{
+    @include retouche;
+  }
+  
+  .section.categorie .container{
+    display: flex;
+    justify-content: center;
+    // padding-top: .5rem 5rem;
+    
+    ul{
+      
+      font-size: 0;// correction d'un bug d'espace blanc
+      display: inline-block;
+      text-align: center;
+      
+    }
+    
+    li{
+      display: inline-block;
+      position: relative;
+      transition: background-color, color .2s ease;
+      &:hover{
+        background-color: $primary;
+        color: white;
+        
+      }
+      &:hover h2{
+        color: #fff;
+      }
+      // au survol des catégories, les barres verticales disparaissent
+      &:hover h2:before{
+        display: none;
+      }
+    }
+    
+    h2{
+      font-size: 1.2rem;
+      
+      &:before{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        @include is-Y-centered;
+        right: -2px;
+        width: 2px;
+        height: 10px;
+        background-color: $primary;
+        
+      }
+      // j'enlève la dernière barre
+      &.last:before{
+        display: none;
+      }
+      
+    }
+    
+    a{
+      display: inline-block;
+      padding: 0.3rem .8rem;
+    }
+    
+    
+    
+    @media screen and (max-width: 521px){
+      
+      li{ padding: 0; }
+      h2{ font-size: .9rem; }
+      
+    }
+    
+    
+  }
+  
+  
+  /****** la gallerie d'images *********/ 
+  
+  
+  .section.works{
+    // padding-left: 0;
+    // padding-right: 0;
+    @extend %card-component;
+ 
+  } 
+  
+  
+  // class pour javascript pour mettre les vignettes en gris quand une <figure> est survolée
+  .is-gray:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .2);
+    
+  }
+  
+
+  
+  
+}

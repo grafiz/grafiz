@@ -1,0 +1,476 @@
+@charset "utf-8";
+
+#page-About{
+  padding-top: 1rem;
+  
+
+  /************************* PREMIERE SECTION *******************************/
+
+  .section.intro{
+    // padding-top: 1.2rem;
+
+    // le css commun à tous les <p> de la section "intro""
+    p{
+      font-family: $skills-font7;
+      font-weight: 400;
+      color: $primary-dark;
+      line-height: 2.4rem;
+      strong span{
+        color: $grey-dark;
+      }
+      @media #{$tablet-size}{
+        font-size: 2.5rem;
+        // text-align: center;
+        line-height: 3.5rem;
+      }
+    }
+
+    // Hello
+    p.hello{
+      font-size: 3.3rem;
+      text-shadow:2px 3px 1px $primary;
+      @media #{$tablet-size}{
+        // text-align: center;
+        font-size: 4rem;
+        // margin-bottom: 3rem !important;
+      }
+      
+      // la main
+      span.hand{
+        // position: relative combiné a z-index car le svg était au par-dessus
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        margin-left: .5rem;
+        font-size: 4rem;
+        text-shadow: none;
+        transform-origin: 80% 100%;
+        animation: wave-hand 1s ease-in-out infinite alternate, swing 1s ease infinite alternate; 
+
+        @media #{$tablet-size}{
+          font-size: 4.5rem;
+        }
+      }
+      
+      @keyframes wave-hand{
+        0% { transform: rotate(17deg); }
+        20% { transform: rotate(28deg); }
+        40% { transform: rotate(17deg); }
+        60% { transform: rotate(28deg); }
+        80% { transform: rotate(17deg); }
+        100% { transform: rotate(28deg); }
+      }
+
+    }
+
+  } 
+
+  @keyframes col {
+    0% {fill:red}
+    25% {fill:$primary-opaque; transform: scale(1.05); transform-origin: center;}
+    50% {fill:purple}
+    75% {fill:orange}
+    }
+    // c'est le premier <ul> de la page
+    ul.shape{
+      display: flex;
+      justify-content: center;
+       li{
+         text-align: center;
+         margin: 2vw;
+       }
+       figure.shape svg .toto{
+
+        // fill: red !important;
+        animation: col 3s linear infinite;
+       }
+
+     
+    }
+
+    svg{
+      min-width: 5.2rem;
+      margin: 0 .2rem;
+      @media #{$tablet-size}{
+        width: 9rem;
+      }
+    }
+
+    // la flèche du bas
+    .arrow{
+      color: $primary-dark;
+      animation: bounce .5s ease-in infinite alternate;
+ 
+
+
+      // @media #{$desktop-size}{
+      //   // margin-top: 1rem;
+      //   margin-bottom: 3rem !important;
+      // }
+    }
+
+  /**************************  PREMIERE SECTION END />  ******************************/
+  
+
+
+
+
+
+  /************************* CSS COMMUN POUR CHAQUE ARTICLE *******************************/
+
+  // les articles représentent les sections "Design graphique", "Illustration", "Web"
+  .section{
+    // ".section.is-medium" créé des padding-top et bottom seulement à partir de la taille desktop donc j'interviens pour la taille tablette avec un padding de 6rem
+    @media #{$tablet-size}{
+      padding: 6rem 2.5rem;
+    }
+
+
+    aside{
+      font-style: italic;
+      p{ 
+        margin-left: .5rem; 
+        margin-top: 3rem; 
+        text-align: center;
+        @media #{$tablet-size}{
+          text-align: left;
+          // margin-left: 12rem;
+          margin-right: 5vw;
+        }
+      }
+      a.article-graphisme{
+        text-decoration: underline $primary;
+        font-weight: bold;
+      }
+    }
+
+    
+  }
+
+  h2{
+    color: $grey-dark;
+    font-weight: 800 !important;
+    // le soulignement vert sous chaque titrage
+    &:before{
+      content: '';
+      background-color: $primary-dark;
+      border-radius: 25px 0 25px 0;
+      opacity: .15;
+      z-index: -1;
+      @include is-X-centered;
+      top: 50%;
+      width: 150px;
+      height: 28px;
+    }
+    
+    @media #{$tablet-size}{
+      font-size: 6rem !important;
+      &:before{
+        top: 65%;
+        left: 50%;
+        width: 300px;
+        height: 28px;
+      }
+    }
+    
+
+  }
+
+
+  @media #{$tablet-size}{
+    // titre des articles -> 'Design Graphique', 'Illustration', 'Web'
+    h2{
+      font-size: 4rem !important;
+      margin-bottom: 3rem;
+    }
+    // les 3 icons des titres
+    figure i{
+      font-size: 6rem;
+      color: $grey-dark;
+      margin-bottom: 1rem;
+    }
+    figcaption{
+      margin-top: .5rem;
+    }
+    header{
+      margin-bottom: 3rem;
+    }
+ 
+  }
+
+
+  // article{
+    
+    // display: flex;
+    // flex-direction: column;
+    
+    hr{
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      background-color: $grey-dark;
+    }
+
+    
+    // les titres de niveau 2 -> 'identité visuelle', 'retouche photo' ...
+    .graphisme>li,
+    .illustration>li,
+    .web>li{
+      // list-style-type: square;
+      // je décale avec le 'margin-left' car les puces des <li> sortaient de leur conteneur
+      margin-left: .5rem;
+      @media #{$tablet-size}{
+        margin-bottom: 1.5rem !important;
+      }
+      
+    }
+  // }
+
+  
+  
+  ul{
+    strong.title{
+      // font-family: $skills-font9;
+      color: $primary-dark;
+      font-weight: 600;
+    }
+
+    
+    ul ul li{
+      padding-left: 1rem;
+      list-style-type: square; 
+      list-style-position: inside;
+
+      
+    }
+    
+    ul ul{
+      background-color: $primary-clair;
+      padding: .8rem;
+      em{
+        font-weight: bold;
+        color: $grey-dark;
+      }
+      strong{
+        font-weight:bold;
+        color :green;
+      }
+    }
+  }
+
+  
+  .img{
+    object-fit: cover;
+    width: 100%;
+     
+    @media #{$tablet-size}{
+      height: 100%;
+      width: auto;
+    }
+  }
+  .gif-container{
+    display:block;
+    max-width:286px;
+    height: 384px;
+    margin: 0 auto;
+    overflow:hidden;
+    figcaption{
+      color: $white;
+      position: absolute;
+      // @include is-X-centered;
+      bottom: 0;
+      background-color: $primary;
+      margin: auto;
+      width: 100%;
+      line-height: 2.2rem;
+    }
+    
+    img{
+      max-width: 864px;
+      position: absolute;
+      top:0;
+    }
+    @media #{$tablet-size}{
+      max-width:448px;
+      height: 600px;
+      img{
+        max-width: 1350px;
+      }
+    }
+  }
+
+   /************************* CSS COMMUN END /> *******************************/
+  
+
+
+
+
+
+
+
+
+
+  /********************  Section Design Graphique  *************************/
+
+  .gif-graphisme{
+    left: 0;
+  }
+
+
+  /********************  Section Illustration  *************************/
+  
+  .section.illustration{
+    background-color: $primary-clair;
+    position: relative;
+    width: 100%;
+    
+    .first-para{
+      font-size: 1.2rem;
+      line-height: 1.9rem;
+      em{
+        font-style: normal;
+      }
+      span{
+        color: $primary-dark;
+        color: $primary-dark;
+      }
+    }
+
+    .gif-illu{
+      left: -289px;
+      @media #{$tablet-size}{
+        left: calc(-1350px / 3 - 1px);
+      }
+    }
+
+    p:first-child{
+      margin-bottom: 3rem !important;
+    }
+  }
+  
+
+
+  /********************  Section Web  *************************/
+  .section.web{
+    .gif-web{
+      left: -576px;
+      @media #{$tablet-size}{
+        left: calc(-902px);
+      }
+    }
+
+  }
+ 
+
+
+
+    /********************  Section workflow  *************************/
+  
+  .section.workflow{
+    background-color: $primary-clair;
+
+    h2{
+      
+      @media #{$tablet-size}{
+        // margin-bottom: 6rem !important;
+        // font-size: 4rem !important;
+      }
+      
+    }
+    .skill{
+      display: flex;
+      align-items: center;
+
+
+
+      img{
+        width: 20vw;
+        max-width: 90px;
+        height: auto;
+        margin: 0 auto 1vw;
+        &.bulma{
+          width: 15vw;
+          max-width: 4rem;
+        }
+        @media #{$tablet-size}{
+          width: 6rem;
+          margin-bottom: 2vw;
+          &.bulma{
+            max-width: 4.4rem;
+          }
+        }
+        @media #{$desktop-size}{
+          width: 6rem;
+        }
+        @media #{$fullhd-size}{
+          width: 7rem;
+          max-width: 150px;
+          &.bulma{
+            max-width: 5.5rem;
+          }
+        }
+        
+      }
+  
+    }
+  }
+    /********************  Section Interests  *************************/
+
+    .section.interest{
+
+      span{
+        width: 17vw;
+        height: 17vw;
+        max-width: 7rem;
+        max-height: 7rem;
+        background-color: $grey-dark;
+        border-radius: 50%;
+        color: white;
+      }
+      i{
+        font-size: 7vw * 0.8;
+      }
+
+
+      @media #{$tablet-size}{
+        i{
+          font-size: 36px;
+        }
+        .column:first-child{
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media #{$desktop-size}{
+        p{ font-size: 1.4rem !important; margin-top: .5rem;}
+        .column:first-child{
+          margin-bottom: 2.6rem;
+        }
+      }
+      
+      p{
+        color: $grey-dark;
+      }
+
+      
+    }
+
+
+ 
+
+
+
+  
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+

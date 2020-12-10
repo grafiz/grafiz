@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+.section.title-form{
+  position: relative;
+  // padding: 3rem 0rem;
+  background-color: rgba($primary, .5);
+  @media #{$tablet-size}{
+    padding: 8rem 1rem !important;
+  }
+  
+
+  p{
+    color:$white;
+    font-weight: 600;
+    span.color{
+      display: inline-block;
+      color: $primary-opaque;
+    }
+  }
+  // contactez-moi
+  span{
+    display: block;
+    margin-top: .8rem;
+    i{
+      margin-left: 1rem;
+      font-size: 2rem;
+      @media #{$desktop-size}{
+        font-size: 2.6rem;
+      }
+    }
+  }
+  .arrow{
+    color: $primary-opaque;
+    position: absolute;
+    bottom: -10px;
+    font-size: 2.4rem;
+    left: calc(50% - 1.2rem);
+    animation: bounce .5s ease-in infinite alternate;
+  }
+    @media #{$tablet-size}{
+      span.contact{
+        margin-top: 1.8rem;
+      }
+      .arrow{
+        bottom: 40px;
+        font-size: 3rem;
+        left: calc(50% - 1.5rem);
+      }
+    }
+    @media #{$desktop-size}{
+      span.contact{
+        margin-top: 2.6rem;
+        i{ margin-left: 1.8rem; }
+      }
+      .arrow{
+        bottom: 40px;
+        font-size: 3rem;
+        left: calc(50% - 1.5rem);
+      }
+    } 
+  
+  
+}
+
+
+////////////////////  FORMULAIRE  ///////////////////////////
+.section.form{
+  max-width: 950px;
+  width: 95vw;
+  margin: 0 auto;
+  
+  label{
+    font-weight: 700;
+  }
+
+  input:not([type="submit"]), textarea{
+    border-radius: 3px;
+    // font-size: 1rem;
+    background-color: #fafafa;
+ 
+  }
+  
+  @media #{$tablet-size}{
+    &{
+      width: 90%;
+    }
+    label{ font-size: 1.4rem; }
+  }
+  
+  
+  
+  
+}

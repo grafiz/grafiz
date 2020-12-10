@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+
+
+%card-component{
+  .card{
+    overflow: hidden;
+  }
+
+  figure{
+    position: relative;
+  }
+
+  figcaption{
+    @include is-centered;
+    display: none;
+    width: 101%;
+    height: 101%;
+    h3{
+      transition: transform .4s ease;
+      font-family: $skills-font;
+      text-transform: uppercase;
+      color: $grey-dark;
+      font-weight: 800;
+      font-size: 5vmin;
+      @media #{$tablet-size}{
+        font-size: 1.8rem !important;
+      }
+    }
+
+    p{
+      color: $white;
+      font-weight: 700;
+      letter-spacing: .09rem;
+      text-transform: uppercase;
+      font-size: 3vmin;
+      width: 80%;
+      margin: 0 auto;
+
+      @media #{$tablet-size}{
+        width: 85%;
+        font-size: 1rem !important;
+      }
+      @media #{$fullhd-size}{
+        font-size: 1.2rem !important;
+      }
+    }
+    a{
+      display: block;
+      border: 5px solid red;
+    }
+  }
+
+
+  a:hover{
+    figcaption{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba($primary, .9);
+
+  
+    }
+    h3, p{
+     animation: legende .2s;
+    }
+    // corrige un bug car :after s'affichait au survol de figcaption
+    .retouche:after{
+      display: none;
+    }
+    img{
+      filter: blur(2px);
+    }
+   
+    
+  }
+
+  
+  @keyframes legende {
+    0%{
+      transform: translate(0px, 50%);
+    }100%{
+      transform: translate(0px, 0px);
+    }
+  }
+
+  
+}

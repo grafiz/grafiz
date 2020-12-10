@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+
+#page-Show{
+
+  ////////////////////////////// HERO
+  .hero{
+    padding: 3rem;
+    background: radial-gradient(#4C2251, #1B0C25);
+
+    .previous{
+      border: 2px solid $primary;
+      padding: 1.6em;
+      border-radius: 50%;
+      color: #fff;
+      background-color: $primary-opaque;
+      transition: .2s;
+      &:hover{
+        color: $primary-opaque;
+        background-color: #fff;
+  
+      }
+      i{
+        font-size: 1.4rem;
+      }
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      font-family: $skills-font3;
+      span{
+        display: block;
+        font-weight: 700;
+        font-family: $skills-font;
+        letter-spacing: .6rem;
+        opacity: .5;
+  
+        
+      }
+    }
+  }
+    ////////////////////////////// FIN DU HERO
+
+
+    .first-img{
+      
+      // en dessous de la taille 'widescreen' l'image de présentation reste centrée
+      @media #{$widescreen-size}{
+        text-align: right !important;
+      }
+
+    }
+
+    .icon{
+      width: 2rem;
+    }
+
+
+    .box{
+      // display: inline-block;
+      @media #{$mobile-size}{
+        box-shadow: none;
+        padding: 0;
+      }
+      
+    }
+  
+  .description{
+    height: 100%;
+    font-size: .95rem;
+    @media #{$tablet-size}{
+      // padding: 2rem;
+      // margin-left: 1.25rem;
+    }
+    @media #{$widescreen-size}{
+      // margin-top: 0.75rem;
+      // margin-bottom: 0.75rem;
+    }
+    article{
+      padding: 1.25rem;
+      @media #{$widescreen-size}{
+        // height: 100%;
+      }
+    }
+  }
+
+  .media{
+    flex-direction: column;
+    overflow: hidden;
+    @media #{$tablet-size}{
+      flex-direction: inherit;
+    }
+    .media-left{
+      transform: translateX(-.5rem);
+
+        // icon Adobe
+        figure.image{
+          width: 3rem;
+          height: 3rem;
+        }
+      
+     
+    }
+ 
+    strong{
+      font-weight: inherit;
+    }
+    .media-content{
+      overflow: hidden;
+      b{
+        font-size: 1rem;
+      }
+      .toto{
+        margin-right: 50px;
+    }
+    }
+ 
+  }
+
+
+
+
+  .content ul{
+    margin-left: 1em;
+  }
+
+img{
+  width: auto;
+}
+
+.titi{
+  @media #{$tablet-size}{
+    text-align: center !important;
+  } 
+}
+
+
+  .retouche{
+    @include retouche;
+
+  }
+
+  
+}
+
+ 
+ 
+

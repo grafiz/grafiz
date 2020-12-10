@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+#page-Accueil{
+
+  .section.home-works,
+  .section.home-services,
+  .section.home-tutos{
+    
+    h2.title-category{
+      font-family: $skills-font;
+      // margin-top: calc($title-spaced-mobile - 10rem);
+      // margin-bottom: $title-spaced-mobile;
+      letter-spacing: -.1rem;
+      position: relative;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: $grey-dark;
+      z-index: 1;
+      @media #{$widescreen-size}{
+        font-size: 10rem !important;
+      }
+
+
+      // le soulignement vert sous chaque titrage
+      &:before{
+        content: '';
+        background-color: $primary-dark;
+        border-radius: 25px 0 25px 0;
+        opacity: .15;
+        z-index: -1;
+         @include is-X-centered;
+        top: 50%;
+        width: 150px;
+        height: 28px;
+      }
+
+      @media #{$tablet-size}{
+        font-size: 6rem !important;
+        margin-bottom: 4rem !important;
+
+        &:before{
+          top: 65%;
+          left: 50%;
+
+          width: 300px;
+          height: 28px;
+        }
+      }
+
+
+
+    }
+  }
+
+  .section.home-works{
+    @extend %card-component;   
+  }
+// SERVICES
+  .section.home-services{
+    background-image: radial-gradient(rgba($primary-opaque, .5), transparent 1px);
+    background-size: 18px 18px;
+    position: relative;
+    background-color: $primary-clair;
+
+
+    &:before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .2;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .illustration i.pencil{
+      animation: 1s pencil-move ease-in infinite;
+    }
+    .illustration i.icon-shadow{
+      top: 2%;
+      animation: 1s shadow-pencil-move ease-in infinite;
+    }
+    .illustration i.pencil:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0px;
+      width: 0px;
+      height: 7px;
+      background-color: $primary-opaque;
+      animation: 1s trait ease-in infinite;
+    }
+    @keyframes pencil-move {
+      0%{transform: translate(0px, 0px);}
+      50% {transform: translate(46px, 0px);}
+    }
+    @keyframes shadow-pencil-move {
+      0% {left: 50%;}
+      50% {left: 67%;}
+    }
+    @keyframes trait {
+      0% { width: 0px; left: 0px;}
+      50% { width: 50px;  left: -50px;}
+      // 100% { width: 50px;  left: 0px;}
+    
+    }
+
+   
+    i{
+      color: $black-ter;
+      position: relative;
+      opacity: .8;
+      z-index: 3;
+      .button{
+        width: 13rem !important;
+        span{
+          color: $white;
+        }
+      }
+      
+      
+    }
+    // un effet d'ombre sur chaques icones de la rubrique "SERVICES"
+    .icon-shadow{
+      color: $primary-opaque;
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      transform: translateX(-55%);
+      z-index: 2;
+    }
+    figcaption{
+      margin-top: 3rem;
+    }
+
+    
+    .bg-gray{
+      background-color: rgba($primary, 50);
+      
+    }
+
+    
+    
+    h3{
+      font-weight: 700;
+      color:darken($primary, 60);
+    }
+    
+    img{
+      
+      max-width: 250px;
+      height: auto;
+      margin: 0 auto;
+    }
+    
+
+   .box{
+    
+      padding-bottom: 3rem !important;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background-color: rgba($primary, .2);
+      border-radius: .2rem;
+     
+      
+   }
+
+   
+    .curved-2{
+      margin-top: 4rem;
+      background-color: #fff;
+    }
+    
+  }
+
+
+
+  // TUTOS
+
+  .section.home-tutos{
+    @include icon-tuto;
+
+  }
+  
+  
+  
+  
+  
+  
+  
+}

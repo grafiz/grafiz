@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+
+// j'ai modifié cette valeur sinon il y avait une marge
+html,
+body {
+  font-family: $skills-font3; // Montserrat
+  font-size: 1rem;
+  
+  font-weight: 500;
+  
+  p, span, ul{
+    // font-size: 1rem;
+    line-height: 1.7rem;
+  }
+
+  &.has-navbar-fixed-top{
+        padding-top: 0;
+  }
+}
+ 
+
+
+a, a:active{
+  color: inherit;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.curved{
+  font-size: 0; // me permet de résoudre un bug d'espacement en dessous la wave
+
+}
+
+hr.small{
+  height: .2rem;
+  width: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  &.left{
+    margin: 0;
+  }
+  @media #{$tablet-size}{
+    width: 4rem;
+
+  }
+ 
+}
+
+// hr.small{
+//   width: 3.5rem;
+//   background:darken($primary, 60);
+//   margin: 2rem auto 1rem;
+// }
+
+
+
+.button{
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600;
+  min-width: 13rem;
+  &:hover{
+    background-color: $grey-darker !important;
+  }
+  @media #{$tablet-size}{
+    
+    // margin-top: 2rem !important;
+    height: 3rem;
+    // font-size: 1.1rem;
+
+  }
+  @media #{$widescreen-size}{
+    margin-top: 2.5rem !important;
+  
+  }
+}
+
+
+
+
+// création de classes utilitaires pour l'espacement. Elles viennent compléter celles de "Bulma" qui s'arretent à "mt-6" -> (3rem)
+@for $i from 7 through 15 {
+  .mt-#{$i}, .pt-#{$i}{
+    margin-top: $i/2 * 1.5rem;
+  }
+  .mb-#{$i}, .pb-#{$i}{
+    margin-bottom: $i/2 * 1.5rem;
+  }
+}

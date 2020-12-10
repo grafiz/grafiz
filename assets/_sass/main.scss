@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+$skills-font : 'Signika Negative', sans-serif;
+$skills-font3 : 'Montserrat', sans-serif;
+$skills-font7 : 'Patua One', sans-serif;
+   
+$primary: rgba(hsl(171, 100%, 41%), 0.8);
+$primary-opaque: hsl(171, 100%, 41%);
+$primary-clair: rgba($primary, .2);
+$primary-dark: darken($primary-opaque, 25);
+
+
+@import "../../node_modules/bulma/bulma.sass";
+@import "partials/responsive";
+@import "partials/global";
+@import "partials/animation";
+@import "@mixins/mixins";
+@import "partials/card";
+@import "partials/header";
+@import "partials/formulaire";
+@import "partials/footer";
+@import "partials/admin";
+
+@import "partials/accueil";
+@import "partials/works";
+@import "partials/show";
+@import "partials/about";
+@import "partials/tutos";
+@import "partials/contact";
+
+
+
+
+
+
+
